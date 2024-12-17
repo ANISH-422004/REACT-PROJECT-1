@@ -31,7 +31,7 @@ const Details = () => {
         <h1 className="text-5xl font-semibold">{product.title}</h1>
         <h2 className="text-zinc-600">{product.category}</h2>
         <h2 className="text-red-400 text-xl ">${product.price}</h2>
-        <p className="text-zinc-600 text-xs font-semibold ">{product.description}</p>
+        <p className="text-zinc-600 text-sm font-semibold ">{product.description}</p>
         <Link className="px-2 py-1  w-[50%] mb-2 border border-b-4 text-blue-400  border-blue-200 ">
           Edit
         </Link>
