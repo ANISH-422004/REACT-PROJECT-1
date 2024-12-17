@@ -1,34 +1,53 @@
-import React from "react";
+import React, { useContext } from "react";
 import Nav from "./Nav";
 import { Link } from "react-router-dom";
-
+import {ProductContext} from "../Utils/Context"
 const Home = () => {
-  return (
+  const [products] =  useContext(ProductContext)
+  // console.log(products);
+  
+  return  products ? (
     <>
       <Nav />
       <div className="w-[86%] h-full pt-28 px-5 flex flex-wrap gap-5 overflow-y-auto   ">
-        <Link
-          to="details/1"
-          id="card"
-          className="w-[15%] h-[35vh] rounded border shadow p-1  transition
-                        hover:scale-105"
-        >
-          <div className=" w-full h-[80%] ">
-            <img
-              className="h-full w-full object-contain transition
-                         hover:scale-105"
-              src="https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg"
-              alt=""
-            />
-          </div>
-          <h1 className="text-center hover:text-blue-400 mt-1">
+        
+        {
+          products.map((p,i)=>{
+            // console.log(p);
             
-            hand bag asda saf kjkfsn{" "}
-          </h1>
-        </Link>
+            return(
+              <Link
+              key={i}
+              to={`details/${p.id}`}
+              id="card"
+              className="w-[20%] h-[40vh] rounded border shadow p-1  transition
+                            hover:scale-105 overflow-hidden"
+            >
+              <div className=" w-full h-[80%] ">
+                <img
+                  className="h-full w-full object-contain transition
+                             hover:scale-105"
+                  src={p.image}
+                  alt=""
+                />
+              </div>
+              <h1 className="text-center text-xs hover:text-blue-400 mt-1">
+                
+                {p.title}
+              </h1>
+            </Link>
+    
+            )
+          })
+        }
+
+
+
       </div>
     </>
-  );
+  ):(
+    <h1>Loading...</h1>
+  )
 };
 
 export default Home;
