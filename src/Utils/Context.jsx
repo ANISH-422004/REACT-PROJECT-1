@@ -14,8 +14,8 @@ const Context = (props) => {
     } catch (err) {
       console.log(err);
     }
-  };
-  useEffect(() => {
+  }; // fetching data and wating for the data to get fetched 
+  useEffect(() => {  
     getProducts();
   }, []);
 
