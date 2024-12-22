@@ -11,6 +11,7 @@ const Home = () => {
 
   const [Filteredproducts, setFilteredproducts] = useState(products || []); // Initialize with all products if available
 
+  
   const getfilteredproducts = async () => {
     if (!category) {
       setFilteredproducts(products); // Show all products if no category is selected
@@ -62,7 +63,9 @@ const Home = () => {
       </div>
     </>
   ) : (
-    <h1>Loading...</h1>
+    <div className="w-full  h-full flex justify-center  items-center ">
+    <h1 className="text-5xl">Loading...</h1>
+  </div>
   );
 };
 

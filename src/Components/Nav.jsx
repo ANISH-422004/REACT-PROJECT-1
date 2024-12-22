@@ -1,6 +1,7 @@
-import React, { useContext } from "react";
-import { ProductContext } from "../Utils/Context";
+
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { ProductContext } from "../Utils/Context";
 
 const Nav = () => {
   const [products] = useContext(ProductContext);
@@ -19,12 +20,12 @@ const Nav = () => {
 
   return (
     <nav className="w-[14%] h-full bg-zinc-50  flex flex-col items-center pt-5">
-      <a
-        href="/create"
+      <Link
+        to="/create"
         className="px-3 py-3  mb-2 border text-blue-400  border-blue-200 "
       >
         Add New Product
-      </a>
+      </Link>
       <h1 className="w-[85%] text-xl">Category Filter</h1>
       <hr className="w-[85%] my-3 bg-black" />
       <div className="w-[80%] ">
