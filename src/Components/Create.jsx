@@ -37,7 +37,7 @@ const Create = () => {
   };
 
   return (
-    <div className="p-8 rounded-lg w-full flex flex-col justify-center items-center">
+    <div className="p-7 rounded-lg w-full  h-screen flex flex-col  justify-center items-center">
       <h2 className="text-2xl font-bold mb-6">Add New Product</h2>
       <form className="w-[70%] space-y-6" onSubmit={handleSubmit}>
         {/* Image Input */}
@@ -116,7 +116,7 @@ const Create = () => {
             value={formData.description}
             onChange={handleChange}
             placeholder="enter product description here.."
-            className="block w-full p-2 border border-gray-300 rounded-lg focus:ring focus:ring-blue-200 focus:border-blue-500"
+            className="block w-full h-[19vh] p-2 border border-gray-300 rounded-lg focus:ring focus:ring-blue-200 focus:border-blue-500"
           ></textarea>
         </div>
 

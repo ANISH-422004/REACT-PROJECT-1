@@ -1,23 +1,11 @@
-import React, { useEffect, useState } from "react";
 import { createContext } from "react";
-import axios from "./Axios";
+import useProducts from "./hooks/getProducts";
 
 export const ProductContext = createContext();
 
 const Context = (props) => {
-  const [Products, setProducts] = useState(null);
-  const getProducts = async () => {
-    try {
-      const { data } = await axios("/products");
-      // console.log(data );
-      setProducts(data)
-    } catch (err) {
-      console.log(err);
-    }
-  }; // fetching data and wating for the data to get fetched 
-  useEffect(() => {  
-    getProducts();
-  }, []);
+
+  const [Products, setProducts] = useProducts(); // Using the custom hook for fetching products from API
 
   return (
     <ProductContext.Provider value={[Products, setProducts]}>
